@@ -3,7 +3,8 @@
 #################
 
 UCI HAR Dataset/
-
+.RData
+.RHistory
 tidy.txt
 
 *.pydevproject
