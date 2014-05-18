@@ -29,6 +29,25 @@ combine.data <- function(data_mode = "train") {
         return(cbind(subjects, activities.val, selected.data))
 }
 
+download.rawdata <- function(url='https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip', output.file='getdata-projectfiles-UCI HAR Dataset.zip') {
+        
+        ## If data directory is not present we should download dataset
+        if (!file.exists('UCI HAR Dataset')) {
+                
+                # if the zip file has already in the directory
+                if(!file.exists(output.file)) {
+                        print('Downloading dataset')
+                        status <- download.file(url, output.file, method='curl')
+                        if (status != 0) {
+                                stop ( paste('Download failed:', url))
+                        }
+                }
+                
+                unzip(output.file)
+                file.remove(output.file)
+        }
+}
+
 tidy.all.data <- function() {
         
         train_data <- combine.data("train")
@@ -47,6 +66,8 @@ tidy.all.data <- function() {
         
         write.table(tidy.data, file = "tidy.txt")
 }
+
+download.rawdata()
 
 parent_data_dir <- "./UCI HAR Dataset"
 

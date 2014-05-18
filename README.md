@@ -14,5 +14,29 @@ This project will contain
  - run_analysis.R - this script will download the file if connected to internet, extract it, clean and tidy your dataset and finally output the new dataset (tidy.txt) with tab separated value. You can read this new dataset read.table("tidy.txt")
  
  - CodeBook.md - a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data 
+ 
+I only tested this project in this following environment :
 
+1. *Computer Architecture* : CPU (Intel)
+2. *Operating System* : Windows (x86_64-w64-mingw32/x64)
+3. *Software toolchain* : R version 3.0.2 (2013-09-25)
+4. *Supporting software and dependencies* : 
+5. *External dependencies* : This project will need to access the dataset if it's not exist from the url described above. 
 
+Here's my session info collected from R
+
+```
+R version 3.0.2 (2013-09-25)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+locale:
+[1] LC_COLLATE=English_United States.1252  LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252 LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] tools_3.0.2
+```
