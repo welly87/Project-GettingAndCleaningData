@@ -7,8 +7,6 @@ Here are the data for the project: [UCI HAR Dataset](https://d396qusza40orc.clou
 
 The purpose of this project is to collect, work with, and clean a data set. The goal is to prepare tidy data that can be used for later analysis. 
 
-
-
 This project will contain  
 
  - run_analysis.R - this script will download the file if connected to internet, extract it, clean and tidy your dataset and finally output the new dataset (tidy.txt) with tab separated value. You can read this new dataset read.table("tidy.txt")
@@ -20,7 +18,7 @@ I only tested this project in this following environment :
 1. *Computer Architecture* : CPU (Intel)
 2. *Operating System* : Windows (x86_64-w64-mingw32/x64)
 3. *Software toolchain* : R version 3.0.2 (2013-09-25)
-4. *Supporting software and dependencies* : 
+4. *Supporting software and dependencies* : RStudio (optional)
 5. *External dependencies* : This project will need to access the dataset if it's not exist from the url described above. 
 
 Here's my session info collected from R
@@ -40,3 +38,11 @@ attached base packages:
 loaded via a namespace (and not attached):
 [1] tools_3.0.2
 ```
+
+Usage :
+
+To run this project you need to change your working directory in R to the file location of the project and then run the run_analysis.R
+
+The result will be tidy.txt in the same folder with the project. You can load that with `data <- read.table("tidy.txt")`
+
+Then you can continue with your analysis.

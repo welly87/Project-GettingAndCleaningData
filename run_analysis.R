@@ -43,7 +43,7 @@ download.rawdata <- function(url='https://d396qusza40orc.cloudfront.net/getdata%
                         }
                 }
                 
-                unzip(output.file)
+                #unzip(output.file)
                 file.remove(output.file)
         }
 }
