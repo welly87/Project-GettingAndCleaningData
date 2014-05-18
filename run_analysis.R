@@ -1,3 +1,4 @@
+# this is the function to read the data based on the pattern 
 read.data <- function(data_mode, prefix) {
         file_name <- paste(prefix, "_", data_mode, ".txt", sep="")
         
@@ -6,6 +7,8 @@ read.data <- function(data_mode, prefix) {
         return(read.table(loc))
 }
 
+
+# this function will combine activities, subjects to the selected data from one mode (ex: train)
 combine.data <- function(data_mode = "train") {
         
         # read x data
@@ -24,11 +27,10 @@ combine.data <- function(data_mode = "train") {
         
         subjects <- read.data(data_mode, "subject")
         
-        # selected.data$subject <- subjects[, 1]
-        
         return(cbind(subjects, activities.val, selected.data))
 }
 
+# this procedure will download the file if not exist and unzip it 
 download.rawdata <- function(url='https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip', output.file='getdata-projectfiles-UCI HAR Dataset.zip') {
         
         ## If data directory is not present we should download dataset
@@ -48,6 +50,9 @@ download.rawdata <- function(url='https://d396qusza40orc.cloudfront.net/getdata%
         }
 }
 
+# this function will combine train and test data set that has been prepared before and 
+# calculate the aggregate and then write to tidy.txt for tab separated value that 
+# can be loaded from read.table("tidy.txt")
 tidy.all.data <- function() {
         
         train_data <- combine.data("train")
@@ -66,6 +71,9 @@ tidy.all.data <- function() {
         
         write.table(tidy.data, file = "tidy.txt")
 }
+
+
+##### this is the main program  #####
 
 download.rawdata()
 
